@@ -40,6 +40,5 @@ end
  Contact.create(name: Faker::Name.name, birthday: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'), contact_info: Faker::PhoneNumber.cell_phone, image: Faker::SlackEmoji.objects_and_symbols, user_id: User.ids.sample)
 end 
 
-puts "Seeded!"
-
+puts "Seeded!!!"
 
