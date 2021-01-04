@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  month: MyString
+  day: 1
+  time: 1
+  am_pm: MyString
+  event_name: MyString
+  note: MyText
+  category: MyString
+  user_id: 1
+  contact_id: 1
+
+two:
+  year: 1
+  month: MyString
+  day: 1
+  time: 1
+  am_pm: MyString
+  event_name: MyString
+  note: MyText
+  category: MyString
+  user_id: 1
+  contact_id: 1
