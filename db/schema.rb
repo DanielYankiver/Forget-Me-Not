@@ -23,11 +23,8 @@ ActiveRecord::Schema.define(version: 2021_01_04_205447) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "year"
-    t.string "month"
-    t.integer "day"
-    t.integer "time"
-    t.string "am_pm"
+    t.datetime "date"
+    t.time "time"
     t.string "event_name"
     t.text "note"
     t.string "category"

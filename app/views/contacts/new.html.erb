@@ -1,0 +1,15 @@
+<h1>New Contact</h1>
+
+<%= form_for @contact do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :birthday %>
+    <%= f.date_field :birthday %>
+    <%= f.label :contact_info %>
+    <%= f.text_field :contact_info %>
+    <%= f.label :image %>
+    <%= f.file_field :image%>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+    <%= f.submit %>
+<% end %>

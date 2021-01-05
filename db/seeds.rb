@@ -10,11 +10,8 @@ require 'faker'
 
 
 10.times do 
-    Event.create( year: 2021, 
-                  month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample, 
-                  day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].sample, 
-                  time: Faker::Time.between(from: DateTime.now - 12, to: DateTime.now, format: :default),
-                  am_pm: ["am", "pm"].sample,
+    Event.create( date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+                  time: Faker::Time.between(from: Time.now - 12, to: Time.now, format: :default),
                   event_name: Faker::SlackEmoji.celebration,
                   note: Faker::Quotes::Shakespeare.hamlet_quote,
                   category: ["Birthday", "Anniversary", "Funeral", "Party", "Bar-Mitzvah", "Bat-Mitzavah", "Coffee Date", "Call", "Facetime Date"].sample,
