@@ -1,5 +1,36 @@
-<h1>Contact Index</h1>
+<h1>events</h1>
 
 <%@contacts.each do |contact|%>
     <p><%= link_to contact.name, contact_path(contact) %><p>
+    <p><%= contact.birthday %></p>
+    <%= contact.image %>
+    <%# add images to seed data%>
 <%end%>
+<br>
+<br>
+<%= link_to "Add Moment", new_event_path %>
+<br>
+<%= link_to "Add a Contact", new_contact_path %>
+<br>
+<br>
+
+<h3><%= link_to "Feed", events_path %></h3>
+
+<% @events.each do |event|%>
+
+    <p><%= link_to event.event_name, event_path(event) %><p>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <p>Category: <%= event.category %></p>
+    <%# add images to seed data%>
+<%end%>
+
+
+<h3><%= link_to "Messages", messages_path %></h3>
+
+<% @messages.each do |message|%>
+    <p>Name: <%#=message.contact.name %></p>
+    <p>Title: <%=message.title %><p>
+    <p>Body: <%= message.body %></p>
+<%end%>
+

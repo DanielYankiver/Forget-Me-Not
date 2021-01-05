@@ -1,6 +1,9 @@
 class ContactsController < ApplicationController
     def index
         @contacts = Contact.all 
+        @events = Event.all
+        @messages = Message.all
+        # byebug
     end 
 
     def show
