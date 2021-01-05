@@ -1,0 +1,7 @@
+<h1>All Of Your Messages</h1>
+<br>
+
+
+<%@messages.each do |message|%>
+    <p><%= link_to message.title, message_path(message) %><p>
+<%end%>

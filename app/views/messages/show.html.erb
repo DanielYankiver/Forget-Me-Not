@@ -1,0 +1,9 @@
+<h1>Message Show Page</h1>
+
+<p>Message Title: <%=@message.title%></p>
+<p>Body: <%=@message.body%></p>
+<p>Image: <%=@message.image%></p>
+<p>Event ID: <%=@message.event_id%></p>
+
+
+<%= button_to "Delete Message", message_path(@message), method: :delete %>

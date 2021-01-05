@@ -1,0 +1,13 @@
+<h1>New Message</h1>
+
+<%= form_for @message do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.label :event_id %>
+    <%= f.number_field :event_id %>
+    <%= f.submit %>
+<% end %>

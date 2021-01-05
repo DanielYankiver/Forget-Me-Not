@@ -21,7 +21,7 @@ require 'faker'
 end 
 
 10.times do 
-    Gift.create(name: Faker::Name.name, description: Faker::Marketing.buzzwords, link: Faker::Internet.domain_name, image: Faker::SlackEmoji.objects_and_symbols) 
+    Gift.create(name: Faker::Name.name, description: Faker::Marketing.buzzwords, link: Faker::Internet.domain_name, image: Faker::SlackEmoji.objects_and_symbols, event_id: Event.ids.sample) 
 end 
 
 

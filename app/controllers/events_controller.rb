@@ -1,33 +1,33 @@
 class EventsController < ApplicationController
     def index
-        @events = event.all 
+        @events = Event.all 
     end 
 
     def show
-        @event = event.find(params[:id])
+        @event = Event.find(params[:id])
     end 
 
     def new 
-       @event = event.new 
+       @event = Event.new 
     end 
 
     def create 
-        @event = event.create(event_params)
+        @event = Event.create(event_params)
         redirect_to event_path(@event)
     end 
 
     def edit 
-        @event = event.find(params[:id])
+        @event = Event.find(params[:id])
     end 
 
     def update 
-        @event = event.find(params[:id])
+        @event = Event.find(params[:id])
         @event.update(event_params)
         redirect_to event_path(@event)
     end 
 
     def destroy 
-        @event = event.find(params[:id])
+        @event = Event.find(params[:id])
         @event.destroy
         redirect_to events_path 
     end 

@@ -1,0 +1,9 @@
+<h1>Gift Show Page</h1>
+
+<p>Gift Name: <%=@gift.name%></p>
+<p>Description: <%=@gift.description%></p>
+<p>Link: <%=@gift.link%></p>
+<p>Image: <%=@gift.image%></p>
+<p>Event ID: <%=@gift.event_id%></p>
+
+<%= button_to "Delete Gift", gift_path(@gift), method: :delete %>

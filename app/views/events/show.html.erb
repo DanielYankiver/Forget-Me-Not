@@ -1,0 +1,11 @@
+<h1>Event Show Page</h1>
+
+<p>Event Name: <%=@event.event_name%></p>
+<p>Time: <%=@event.time%></p>
+<p>Date: <%=@event.date%></p>
+<p>Note: <%=@event.note%></p>
+<p>Category: <%=@event.category%></p>
+<p>User ID: <%=@event.user_id%></p>
+<p>Contact ID: <%=@event.contact_id%></p>
+
+<%= button_to "Delete Event", event_path(@event), method: :delete %>

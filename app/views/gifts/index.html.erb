@@ -1,0 +1,7 @@
+<h1>All Gifts</h1>
+<br>
+
+
+<%@gifts.each do |gift|%>
+    <p><%= link_to gift.name, gift_path(gift) %><p>
+<%end%>
