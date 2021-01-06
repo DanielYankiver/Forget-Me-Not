@@ -1,18 +1,17 @@
 
 
 <h1><%=@user.name%></h1>
-<p>Username:<%= @user.username %></p>
+<p>Username: <%= @user.username %></p>
 
 <img src="<%= @user.image %>" alt="<%= @user.name%>">
 
 <%= button_to "Delete User", user_path(@user), method: :delete %>
 
-<%= button_to "Edit Profile", edit_user_path(@user) %>
-
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<br>
 <%= link_to "Add a Contact", new_contact_path %>
 
 <br>
-<p>Username <%= @user.username %></p>
 
 
 <h3>Profile information Below </h3>

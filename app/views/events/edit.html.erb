@@ -9,17 +9,18 @@
 <%= form_for @event do |f| %>
     <%= f.label :date %>
     <%= f.date_field :date %>
+    <br>
     <%= f.label :time %>
     <%= f.time_field :time %>
+    <br>
     <%= f.label :event_name, "Name Of Event" %>
     <%= f.text_field :event_name %>
+    <br>
     <%= f.label :note %>
     <%= f.file_field :note%>
+    <br>
     <%= f.label :category %>
     <%= f.text_field :category %>
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-    <%= f.label :contact_id %>
-    <%= f.number_field :contact_id %>
+    <br>
     <%= f.submit %>
 <% end %>

@@ -9,13 +9,15 @@
 <%= form_for @contact do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <br>
     <%= f.label :birthday %>
     <%= f.date_field :birthday %>
+    <br>
     <%= f.label :contact_info %>
     <%= f.text_field :contact_info %>
+    <br>
     <%= f.label :image %>
     <%= f.file_field :image%>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <br>
     <%= f.submit %>
 <% end %>

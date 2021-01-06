@@ -9,11 +9,15 @@
 <%= form_for @user do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <br>
     <%= f.label :username %>
     <%= f.text_field :username %>
+    <br>
     <%= f.label :password_digest, "Password" %>
     <%= f.text_field :password_digest %>
+    <br>
     <%= f.label :image %>
     <%= f.file_field :image %>
+    <br>
     <%= f.submit %>
 <% end %>

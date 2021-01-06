@@ -15,7 +15,7 @@
     <% end %>
 
 
-<h1>Messages for event</h1>
+<h1>Messages for Event</h1>
 
     <% @event.messages.each do |message|%>
         <p>Title: <%=message.title %><p>
@@ -24,7 +24,7 @@
     <% end %>
 
 
-<h1>Events feed</h1>
+<h1>Events Feed</h1>
 
 <%@events.each do |event|%>
     <p><%= link_to event.event_name, event_path(event) %><p>
