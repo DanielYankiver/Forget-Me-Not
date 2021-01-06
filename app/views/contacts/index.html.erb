@@ -5,6 +5,7 @@
     <p><%= contact.birthday %></p>
     <%= contact.image %>
     <%# add images to seed data%>
+    <br>
 <%end%>
 <br>
 <br>
@@ -22,15 +23,16 @@
     <p>Date: <%= event.date %></p>
     <p>Time: <%= event.time %></p>
     <p>Category: <%= event.category %></p>
-    <%# add images to seed data%>
+    <br>
 <%end%>
 
 
 <h3><%= link_to "Messages", messages_path %></h3>
 
 <% @messages.each do |message|%>
-    <p>Name: <%#=message.contact.name %></p>
+    <p>Name: <%=message.event.contact.name %></p>
     <p>Title: <%=message.title %><p>
     <p>Body: <%= message.body %></p>
+    <br>
 <%end%>
 

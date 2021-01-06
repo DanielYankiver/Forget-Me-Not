@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
     def show
         @event = Event.find(params[:id])
+        @events = Event.all
     end 
 
     def new 
@@ -13,7 +14,12 @@ class EventsController < ApplicationController
 
     def create 
         @event = Event.create(event_params)
-        redirect_to event_path(@event)
+        if @event.valid?
+            redirect_to event_path(@event)
+        else 
+            flash[:errors_array] = @event.errors.full_messages
+            redirect_to new_event_path
+        end  
     end 
 
     def edit 
@@ -22,8 +28,13 @@ class EventsController < ApplicationController
 
     def update 
         @event = Event.find(params[:id])
-        @event.update(event_params)
-        redirect_to event_path(@event)
+
+        if @event.update(event_params)
+            redirect_to event_path(@event)
+        else 
+            flash[:errors_array] = @event.errors.full_messages
+            redirect_to edit_event_path(@event)
+        end 
     end 
 
     def destroy 

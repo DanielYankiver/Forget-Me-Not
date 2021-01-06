@@ -1,5 +1,11 @@
 <h1>Edit Contact</h1>
 
+<% if flash[:errors_array] %>
+  <% flash[:errors_array].each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
+
 <%= form_for @contact do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>

@@ -1,5 +1,40 @@
-<h1>Contact Show Page</h1>
-
-<p><%=@contact.name%></p>
+<h1><%=@contact.name%></h1>
 
 <%= button_to "Delete Contact", contact_path(@contact), method: :delete %>
+
+<img src="<%= @contact.image %>" alt="<%= @contact.name%>">
+<br>
+<br>
+<p>Contact Info: <%= @contact.contact_info%></p>
+<p>Birthday: <%= @contact.birthday%></p>
+
+<h1>Event Feed</h1>
+<% @events.each do |event| %>
+    <p>Event Name: <%= event.event_name %> </p>
+    <p>Event Date: <%= event.date %></p> 
+    <p>Event Time: <%= event.time %></p>
+    <p>Event Category: <%= event.category %></p>
+    <br>
+<% end %>  
+ <br>
+ <br>
+ <br>
+<h1>Gift List</h1>
+
+<%@events.each do |event| %>
+    <% event.gifts.each do |gift| %>
+        <p>Gift Name: <%= gift.name %></p>
+        <p>Gift Descriion: <%= gift.description %></p> 
+        <p>Gift URL: <%= gift.link %></p>
+        <p>Gift Image: <%= gift.image %></p>
+        <br>
+    <% end %>
+<% end %>  
+
+
+<%= button_to "Edit Contact", edit_contact_path(@contact) %>
+
+<%= link_to "Schedule an Event", new_event_path %>
+
+
+<!--<p>Stretch: add a input note area</p>-->

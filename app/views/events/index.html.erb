@@ -4,4 +4,19 @@
 
 <%@events.each do |event|%>
     <p><%= link_to event.event_name, event_path(event) %><p>
+    <p>Category: <%= event.category %></p>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <br>
+<%end%>
+
+<h3><%= link_to "Messages", messages_path %></h3>
+
+<% @events.each do |event|%>
+    <% event.messages.each do |message|%>
+        <p>Name: <%=message.event.contact.name %></p>
+        <p>Title: <%=message.title %><p>
+        <p>Body: <%= message.body %></p>
+        <br>
+    <% end %>
 <%end%>

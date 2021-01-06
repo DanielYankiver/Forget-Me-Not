@@ -1,11 +1,37 @@
-<h1>Event Show Page</h1>
-
-<p>Event Name: <%=@event.event_name%></p>
+<h1>Event Name: <%=@event.event_name%></h1>
 <p>Time: <%=@event.time%></p>
 <p>Date: <%=@event.date%></p>
-<p>Note: <%=@event.note%></p>
 <p>Category: <%=@event.category%></p>
-<p>User ID: <%=@event.user_id%></p>
-<p>Contact ID: <%=@event.contact_id%></p>
+<p>Note: <%=@event.note%></p>
 
+<h1>Gifts For Specific Event</h1>
+
+    <% @event.gifts.each do |gift|%>
+        <p>Name: <%=gift.name %><p>
+        <p>Description: <%=gift.description %><p>
+        <p>Link: <%= gift.link %></p>
+        <p>Image: <%=gift.image %><p>
+        <br>
+    <% end %>
+
+
+<h1>Messages for event</h1>
+
+    <% @event.messages.each do |message|%>
+        <p>Title: <%=message.title %><p>
+        <p>Body: <%= message.body %></p>
+        <br>
+    <% end %>
+
+
+<h1>Events feed</h1>
+
+<%@events.each do |event|%>
+    <p><%= link_to event.event_name, event_path(event) %><p>
+    <p>Category: <%= event.category %></p>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <br>
+<%end%>
+    
 <%= button_to "Delete Event", event_path(@event), method: :delete %>

@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
 
     def show
         @contact = Contact.find(params[:id])
+        @events = Event.all
     end 
 
     def new 
@@ -16,7 +17,12 @@ class ContactsController < ApplicationController
 
     def create 
         @contact = Contact.create(contact_params)
-        redirect_to contact_path(@contact)
+        if @contact.valid?
+            redirect_to contact_path(@contact)
+        else 
+            flash[:errors_array] = @contact.errors.full_messages
+            redirect_to new_contact_path
+        end 
     end 
 
     def edit 
@@ -25,8 +31,13 @@ class ContactsController < ApplicationController
 
     def update 
         @contact = Contact.find(params[:id])
-        @contact.update(contact_params)
-        redirect_to contact_path(@contact)
+
+        if @contact.update(contact_params)
+            redirect_to contact_path(@contact)
+        else 
+            flash[:errors_array] = @contact.errors.full_messages
+            redirect_to edit_contact_path(@contact)
+        end 
     end 
 
     def destroy 

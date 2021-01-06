@@ -1,11 +1,17 @@
-<h1>New Moment</h1>
+<h1>New Event</h1>
+
+<% if flash[:errors_array] %>
+  <% flash[:errors_array].each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
+<% end %>
 
 <%= form_for @event do |f| %>
     <%= f.label :date %>
     <%= f.date_field :date %>
     <%= f.label :time %>
     <%= f.time_field :time %>
-    <%= f.label :event_name, "Name Of Moment" %>
+    <%= f.label :event_name, "Name Of Event" %>
     <%= f.text_field :event_name %>
     <%= f.label :note %>
     <%= f.file_field :note%>
