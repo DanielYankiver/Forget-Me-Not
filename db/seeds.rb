@@ -15,7 +15,7 @@ require 'faker'
                   event_name: Faker::SlackEmoji.celebration,
                   note: Faker::Quotes::Shakespeare.hamlet_quote,
                   category: ["Birthday", "Anniversary", "Funeral", "Party", "Bar-Mitzvah", "Bat-Mitzavah", "Coffee Date", "Call", "Facetime Date"].sample,
-                  user_id: rand(1..10),
+                  user_id: rand(1..3),
                   contact_id: rand(1..10)
                   )
 end 
@@ -29,13 +29,15 @@ end
     Message.create(event_id: rand(1..10), title: Faker::Quote.yoda, body: Faker::Quote.famous_last_words, image: Faker::SlackEmoji.objects_and_symbols)
 end 
 
-10.times do 
-    User.create(name: Faker::Name.name, username: Faker::Internet.username(specifier: 8), password_digest: Faker::Internet.password)
-end 
+User.create(name: "Mark", username: "markymark",password: "abc123",password_confirmation: "abc123")
+User.create(name: "Daniel", username: "dyank", password: "abc123",password_confirmation: "abc123")
+User.create(name: "Eric", username: "ericthelord", password: "abc123",password_confirmation: "abc123")
+
+
 
 10.times do 
     Contact.create(name: Faker::Name.name, birthday: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'), contact_info: Faker::PhoneNumber.cell_phone, image: Faker::SlackEmoji.objects_and_symbols, user_id: User.ids.sample)
 end 
 
-puts "Seeded!!!"
+puts "Seed! Seed! Seed! Seed! Seed!"
 
