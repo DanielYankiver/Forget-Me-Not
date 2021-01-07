@@ -11,16 +11,5 @@
     <br>
 <%end%>
 
-<h1>Message Feed</h1>
-
-
-<% @events.each do |event|%>
-    <% event.messages.each do |message|%>
-        <p>Name: <%=message.event.contact.name %></p>
-        <p>Title: <%=message.title %><p>
-        <p>Body: <%= message.body %></p>
-        <br>
-    <% end %>
-<%end%>
 
 

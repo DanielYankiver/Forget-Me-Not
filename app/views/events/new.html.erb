@@ -18,21 +18,20 @@
     <%= f.label :event_name, "Name Of Event" %>
     <%= f.text_field :event_name %>
     <br>
-    <%= f.label :image %>
-    <%= f.file_field :image%>
-    <br>
     <%= f.label :category %>
     <%= f.text_field :category %>
     <br>
     <%= f.label :contact_id, "Pick a Cotnact" %>
     <%= f.collection_select :contact_id, Contact.all, :id, :name %>
     <br>
+    <%= f.label :message %>
+    <%= f.text_area :message, placeholder: "Write Message to Send"%>
+    <br>
     <%= f.label :note %>
     <%= f.text_area :note %>
     <br>
     <%= f.submit %>
 <% end %>
-
 
 
 

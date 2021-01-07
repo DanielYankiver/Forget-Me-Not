@@ -7,6 +7,8 @@
 <% end %>
 
 <%= form_for @event do |f| %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
+    <br>
     <%= f.label :date %>
     <%= f.date_field :date %>
     <br>
@@ -16,14 +18,17 @@
     <%= f.label :event_name, "Name Of Event" %>
     <%= f.text_field :event_name %>
     <br>
-    <%= f.label :note %>
-    <%= f.file_field :note%>
-    <br>
     <%= f.label :category %>
     <%= f.text_field :category %>
     <br>
-    <%= f.label :contact_id %>
-    <%= f.collection_select :contact_id, Contact.all, :id, :name %>
+    <%= f.label :contact_id, "Pick a Contact" %>
+    <%= f.collection_select :contact_id, @current_user.contacts, :id, :name %>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message, placeholder: "Edit Message to Send"%>
+    <br>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
     <br>
     <%= f.submit %>
 <% end %>

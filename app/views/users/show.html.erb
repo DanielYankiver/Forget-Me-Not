@@ -1,21 +1,23 @@
 
 
 <h1><%=@user.name%></h1>
-<p>Username: <%= @user.username %></p>
 
 <%if @user.avatar.attached? %>
     <img src="<%= (url_for(@user.avatar))%>">
 <%end%>
 
+<h3>Profile Information: </h3>
+
+<p>Name: <%= @user.name %></p>
+<p>Username: <%= @user.username %></p>
+
+
 
 <%= button_to "Delete User", user_path(@user), method: :delete %>
 <br>
 <%= button_to  "Edit Profile", edit_user_path(@user), method: :get %>
-<br>
-<%= button_to "Add a Contact", new_contact_path, method: :get %>
-
-<br>
 
 
-<h3>Profile information Below </h3>
-<p>Add and migrate more info for users</p>
+
+
+

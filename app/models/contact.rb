@@ -7,4 +7,6 @@ class Contact < ApplicationRecord
 
     validates :contact_info, uniqueness: {presence: :true, message: "must be unique"}
     validates :name, uniqueness: {presence: :true, message: "must be unique"}
+
+    has_one_attached :avatar 
 end

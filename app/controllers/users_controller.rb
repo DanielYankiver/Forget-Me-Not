@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         if @user.valid? && @user.password_confirmation == @user.password
             # redirect_to user_path(@user)
             session[:user_id] = @user.id
-            redirect_to '/welcome'
+            redirect_to home_path
                         # /user
         else 
             flash[:errors_array] = @user.errors.full_messages

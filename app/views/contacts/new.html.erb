@@ -7,6 +7,8 @@
 <% end %>
 
 <%= form_for @contact do |f| %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
+    <br>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br>
@@ -16,8 +18,8 @@
     <%= f.label :contact_info %>
     <%= f.text_field :contact_info %>
     <br>
-    <%= f.label :image %>
-    <%= f.file_field :image%>
+    <%= f.label "Image Upload" %>
+    <%= f.file_field :avatar %>
     <br>
     <%= f.submit %>
 <% end %>

@@ -2,7 +2,10 @@
 
 <%= button_to "Delete Contact", contact_path(@contact), method: :delete %>
 
-<img src="<%= @contact.image %>" alt="<%= @contact.name%>">
+<%if @contact.avatar.attached? %>
+    <img src=<%= (url_for(@contact.avatar))%>>
+<%end%>
+
 <br>
 <br>
 <p>Contact Info: <%= @contact.contact_info%></p>
@@ -15,20 +18,6 @@
     <p>Event Time: <%= event.time %></p>
     <p>Event Category: <%= event.category %></p>
     <br>
-<% end %>  
- <br>
- <br>
- <br>
-<h1>Gift List</h1>
-
-<%@events.each do |event| %>
-    <% event.gifts.each do |gift| %>
-        <p>Gift Name: <%= gift.name %></p>
-        <p>Gift Descriion: <%= gift.description %></p> 
-        <p>Gift URL: <%= gift.link %></p>
-        <p>Gift Image: <%= gift.image %></p>
-        <br>
-    <% end %>
 <% end %>  
 
 <br>

@@ -1,32 +1,13 @@
 <h1>Event Name: <%=@event.event_name%></h1>
-<br>    
-<%= button_to "Edit This Event", edit_event_path(@event), method: :get %>
+
 <br>
 <p>Time: <%=@event.time%></p>
 <p>Date: <%=@event.date%></p>
 <p>Category: <%=@event.category%></p>
+<p>Message: <%= @event.message %></p>
 <p>Note: <%=@event.note%></p>
 
-<h1>Gifts For Specific Event</h1>
-
-    <% @event.gifts.each do |gift|%>
-        <p>Name: <%=gift.name %><p>
-        <p>Description: <%=gift.description %><p>
-        <p>Link: <%= gift.link %></p>
-        <p>Image: <%=gift.image %><p>
-        <br>
-    <% end %>
-
-
-<h1>Messages for Event</h1>
-
-    <% @event.messages.each do |message|%>
-        <p>Title: <%=message.title %><p>
-        <p>Body: <%= message.body %></p>
-        <br>
-    <% end %>
-
-    
+<br>    
 
 <h1>Events Feed</h1>
 
@@ -37,5 +18,9 @@
     <p>Time: <%= event.time %></p>
     <br>
 <%end%>
+
+<%= button_to "Edit This Event", edit_event_path(@event), method: :get %>
+
+<%= button_to "Create New Event", new_event_path, method: :get %>
     
 <%= button_to "Delete Event", event_path(@event), method: :delete %>
