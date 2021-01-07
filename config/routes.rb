@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   resources :events
   resources :contacts
   resources :users
+  # resources :sessions 
 
-  get 'login', to: 'sessions#new'
+  get 'login', to: 'sessions#new', as: 'new_session'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'

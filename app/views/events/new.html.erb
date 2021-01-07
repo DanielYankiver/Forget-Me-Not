@@ -24,3 +24,20 @@
     <br>
     <%= f.submit %>
 <% end %>
+
+<h1>Create a Message for Event</h1>
+
+ <%= form_for @message do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <br>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <br>
+    <%= f.submit %>
+<% end %>
+
+

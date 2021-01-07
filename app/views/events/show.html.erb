@@ -1,4 +1,7 @@
 <h1>Event Name: <%=@event.event_name%></h1>
+<br>    
+<%= button_to "Edit This Event", edit_event_path(@event), method: :get %>
+<br>
 <p>Time: <%=@event.time%></p>
 <p>Date: <%=@event.date%></p>
 <p>Category: <%=@event.category%></p>
@@ -22,6 +25,19 @@
         <p>Body: <%= message.body %></p>
         <br>
     <% end %>
+
+    <%= form_for @message do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <br>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <br>
+    <%= f.submit %>
+    <% end%>
 
 
 <h1>Events Feed</h1>

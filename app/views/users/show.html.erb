@@ -3,13 +3,16 @@
 <h1><%=@user.name%></h1>
 <p>Username: <%= @user.username %></p>
 
-<img src="<%= @user.image %>" alt="<%= @user.name%>">
+<%if @user.avatar.attached? %>
+    <img src="<%= (url_for(@user.avatar))%>">
+<%end%>
+
 
 <%= button_to "Delete User", user_path(@user), method: :delete %>
-
-<%= link_to "Edit Profile", edit_user_path(@user) %>
 <br>
-<%= link_to "Add a Contact", new_contact_path %>
+<%= button_to  "Edit Profile", edit_user_path(@user), method: :get %>
+<br>
+<%= button_to "Add a Contact", new_contact_path, method: :get %>
 
 <br>
 

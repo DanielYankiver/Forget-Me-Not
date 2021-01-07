@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :Events
-    has_many :Contact, through: :Events
+    has_many :events
+    has_many :contacts, through: :events
     
     has_secure_password
     
@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: {message: "must be unique"}
     
-
+    has_one_attached :avatar 
 
 end

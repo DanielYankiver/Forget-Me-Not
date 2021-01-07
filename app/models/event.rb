@@ -6,6 +6,7 @@ class Event < ApplicationRecord
 
     validates :date, :time, :event_name, :category, presence: :true
 
-
+    
+    
 
 end

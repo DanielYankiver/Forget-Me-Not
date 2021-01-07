@@ -13,5 +13,7 @@
   <%= f.password_field :password, placeholder: "Enter Password"%><br>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  <%= f.label "Image Upload" %>
+  <%= f.file_field :avatar %>
   <%= f.submit %>
 <%end%>

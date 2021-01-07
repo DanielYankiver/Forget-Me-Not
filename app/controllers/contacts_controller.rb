@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
     def index
-        @contacts = Contact.all 
+        @contacts = @current_user.contacts 
         @events = Event.all
         @messages = Message.all
         # byebug
@@ -18,6 +18,7 @@ class ContactsController < ApplicationController
     def create 
         @contact = Contact.create(contact_params)
         if @contact.valid?
+            session[:contact_id] = @contact.id
             redirect_to contact_path(@contact)
         else 
             flash[:errors_array] = @contact.errors.full_messages

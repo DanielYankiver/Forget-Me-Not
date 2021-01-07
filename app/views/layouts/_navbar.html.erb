@@ -8,15 +8,15 @@
         
         <nav> 
             <ul>
-                <li> <%= link_to "Home", home_path %></li>
-                <li> <%= link_to "Profile", users_path %></li>
-                <li> <%= link_to "Contacts", contacts_path %></li>
-                <li> <%= link_to "Events", events_path %></li>
-
-                <!--Need to change above paths once have login and cookies-->
+                 <% if @current_user %>
+                    <li> <%= link_to "Home", home_path %></li>
+                    <li> <%= link_to "Profile", user_path(@current_user) %></li>
+                    <li> <%= link_to "Contacts", contacts_path %></li>
+                    <li> <%= link_to "Events", events_path %></li>
+                    <li><%= link_to "Logout", logout_path %></li>
+                <% end %>
             </ul> 
         </nav>
     </div>
 </header>
 
-<!--add searchbar to nav-->

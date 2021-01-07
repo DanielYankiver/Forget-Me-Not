@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :welcome]
 
   def new
+
   end
 
     def create 
@@ -13,10 +14,10 @@ class SessionsController < ApplicationController
         redirect_to user_path(@user)
       else
         flash[:error] = "Password or Username incorrect"
-        redirect_to '/welcome' 
+        redirect_to new_session_path
       end 
     end 
-  
+
 
   def page_requires_login
   end

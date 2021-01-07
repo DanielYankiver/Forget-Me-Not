@@ -13,11 +13,14 @@
     <%= f.label :username %>
     <%= f.text_field :username %>
     <br>
-    <%= f.label :password_digest, "Password" %>
-    <%= f.text_field :password_digest %>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password %>
     <br>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :password_confirmation, "Confirm Password" %>
+    <%= f.password_field :password_confirmation %>
+    <br>
+    <%= f.label "Image Upload" %>
+    <%= f.file_field :avatar %>
     <br>
     <%= f.submit %>
 <% end %>
