@@ -21,8 +21,13 @@
     <%= f.label :category %>
     <%= f.text_field :category %>
     <br>
-    <%= f.label :contact_id, "Pick a Cotnact" %>
-    <%= f.collection_select :contact_id, Contact.all, :id, :name %>
+    <% if @current_user.contacts.empty?%>
+      <%= f.label :contact_id, "Pick a Contact" %>
+      <%= f.text_area :contact_id, placeholder: "You Do Not Have Any Contacts. Please Create Contact Below First" %>
+    <% else%>
+     <%= f.label :contact_id, "Pick a Contact" %>
+     <%= f.collection_select :contact_id, @current_user.contacts, :id, :name %>
+    <% end%>
     <br>
     <%= f.label :message %>
     <%= f.text_area :message, placeholder: "Write Message to Send"%>
@@ -33,5 +38,7 @@
     <%= f.submit %>
 <% end %>
 
+<br>
+<h1 size: large;><%= button_to "Create a Contact", new_contact_path, method: :get %></h1>
 
 

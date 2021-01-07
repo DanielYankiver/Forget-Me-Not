@@ -13,7 +13,12 @@
   <%= f.password_field :password, placeholder: "Enter Password"%><br>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  <br>
   <%= f.label "Image Upload" %>
   <%= f.file_field :avatar %>
+  <br>
+  <br>
   <%= f.submit %>
 <%end%>
+<br>
+<%= button_to "Login", '/login', method: :get%>

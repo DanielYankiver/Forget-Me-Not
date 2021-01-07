@@ -1,3 +1,19 @@
-<h1>Home Page</h1>
+<h1>Forget Me Not</h1>
 <br>
 
+<h1>Add Logo</h1>
+
+<h2>Organize, remind, and contact friends / loved ones of important events in their life, never forget or miss an important moment again.</h2>
+
+Events Feed 
+<%@events.each do |event|%>
+    <p><%= link_to event.event_name, event_path(event) %><p>
+    <p>Category: <%= event.category %></p>
+    <p>Date: <%= event.date %></p>
+    <p>Time: <%= event.time %></p>
+    <br>
+<%end%>
+
+<%= button_to "Schedule an Event", new_event_path, method: :get %>
+
+<%= button_to "Create New Contact", new_contact_path, method: :get %>
