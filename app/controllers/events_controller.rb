@@ -7,8 +7,8 @@ class EventsController < ApplicationController
     def send_text(input)
         # Your Account Sid and Auth Token from twilio.com/console
         # and set the environment variables. See http://twil.io/secure
-        account_sid = 'ACb964b111bb91a4ac4ba8457804d27729'
-        auth_token = '1bf5ede4f3231a701777da909913ef96'
+        account_sid = ENV["TWILIO_ACCOUNT_SID"]
+        auth_token = ENV["TWILIO_AUTH_TOKEN"]
         @client = Twilio::REST::Client.new(account_sid, auth_token)
         
     
@@ -27,35 +27,27 @@ class EventsController < ApplicationController
     def show
         @event = Event.find(params[:id])
         @events = Event.all
-        @message = Message.find(params[:id])
+        # @message = Message.find(params[:id])
     end 
 
     def new 
        @event = Event.new
-
-    #    @user = User.find(params[:id])
-    #    @contact = Conctact.find(params[:id])
-
        @message = Message.new
     end 
 
     def create 
         @event = Event.create(event_params)
-        @user = User.find(params[:id])
-        # @contact = Conctact.find(params[:id])
-        byebug
-        if @event.valid?
-            # event_params[:user_id] = @user.id
-            # event_params[:contact_id] = @contact.id
-            event_params[:user_id] = @user.id
+        
+        if @event.valid? 
             redirect_to event_path(@event)
-            send_text(event_params[:category])
+            # send_text(event_params[:category])
         else 
             flash[:errors_array] = @event.errors.full_messages
             redirect_to new_event_path
         end  
         
     end 
+
 
     def edit 
         @event = Event.find(params[:id])

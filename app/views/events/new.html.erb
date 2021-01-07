@@ -7,6 +7,8 @@
 <% end %>
 
 <%= form_for @event do |f| %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
+    <br>
     <%= f.label :date %>
     <%= f.date_field :date %>
     <br>
@@ -16,28 +18,21 @@
     <%= f.label :event_name, "Name Of Event" %>
     <%= f.text_field :event_name %>
     <br>
-    <%= f.label :note %>
-    <%= f.file_field :note%>
+    <%= f.label :image %>
+    <%= f.file_field :image%>
     <br>
     <%= f.label :category %>
     <%= f.text_field :category %>
     <br>
-    <%= f.submit %>
-<% end %>
-
-<h1>Create a Message for Event</h1>
-
- <%= form_for @message do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :contact_id, "Pick a Cotnact" %>
+    <%= f.collection_select :contact_id, Contact.all, :id, :name %>
     <br>
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-    <br>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
     <br>
     <%= f.submit %>
 <% end %>
+
+
 
 

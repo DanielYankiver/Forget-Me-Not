@@ -39,3 +39,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+#Ignore .env for API related tokens and keys 
+# *twilio.env

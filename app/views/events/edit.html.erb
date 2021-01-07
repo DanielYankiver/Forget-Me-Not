@@ -22,5 +22,8 @@
     <%= f.label :category %>
     <%= f.text_field :category %>
     <br>
+    <%= f.label :contact_id %>
+    <%= f.collection_select :contact_id, Contact.all, :id, :name %>
+    <br>
     <%= f.submit %>
 <% end %>
