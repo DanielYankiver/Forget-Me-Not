@@ -1,15 +1,36 @@
 <h1>All Of Your Events</h1>
-<br>
 
-<%= button_to "Create New Event", new_event_path, method: :get %>
 
-<%@events.each do |event|%>
-    <p><%= link_to event.event_name, event_path(event) %><p>
-    <p>Category: <%= event.category %></p>
-    <p>Date: <%= event.date %></p>
-    <p>Time: <%= event.time %></p>
-    <br>
-<%end%>
+<section id="contact" class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card p-4">
+            <div class="card-body">
+                <%@events.each do |event|%>
+                  <img src="https://voidtech.net/images/calendar_color_picker/Calendar%20Color%20Picker%20Icon%20Large%20Clear.png" alt="" class="img-fluid card-img-top"> 
+                  <hr>
+                  <hr>
+                  <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
+                  <small class="text-muted">Category: <%= event.category %></small>
+                  <hr>
+                  <small class="text-muted">Date: <%= event.date %></small>
+                  <hr>
+                  <small class="text-muted">Time: <%= event.time %></small>
+                  <hr>
+                  <p class="card-text">Message: <%= event.message %></p>
+                  <hr>
+                  <hr>
+                <%end%>  
+            </div>
+          </div>
+        </div>
+       
+
+        
+      </div>
+    </div>
+  </section>
 
 
 

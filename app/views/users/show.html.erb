@@ -1,23 +1,29 @@
 
 
-<h1><%=@user.name%></h1>
+<hr>
+    <div>
+        <%if @user.avatar.attached? %>
+            <img src="<%= (url_for(@user.avatar))%>" alt="" class="displayed">
+        <%end%>
+    </div>
+    <div class="profile-header-info"> 
+        <p>Name: <%= @user.name %></p>
+        <p>Username: <%= @user.username %></p>
+    </div>
+<hr>
 
-<%if @user.avatar.attached? %>
-    <img src="<%= (url_for(@user.avatar))%>">
-<%end%>
-
-<h3>Profile Information: </h3>
-
-<p>Name: <%= @user.name %></p>
-<p>Username: <%= @user.username %></p>
-
-
-
-<%= button_to "Delete User", user_path(@user), method: :delete %>
-<br>
-<%= button_to  "Edit Profile", edit_user_path(@user), method: :get %>
-
-
-
+<div class="buttons">
+    <div class="flex-parent jc-center">
+        <div>
+            <button class="btn btn-danger margin-right btn-lg " type="button" ><%= link_to "Delete User", user_path(@user), method: :delete %></button>
+        </div>
+        <div>
+            <button class="btn btn-warning margin-right btn-lg " type="button"><%= link_to  "Edit Profile", edit_user_path(@user), method: :get %></button>
+        </div>
+        <div>
+            <button class="btn btn-success btn-lg " type="button"><%= link_to "Add Contact", new_contact_path, method: :get %></button>
+        </div>
+    </div>
+</div>
 
 

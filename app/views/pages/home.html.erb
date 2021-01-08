@@ -1,4 +1,5 @@
-<h1>Forget Me Not</h1>
+<!--Our old code -->
+<!--<h1>Forget Me Not</h1>
 <br>
 
 <h1>Add Logo</h1>
@@ -6,14 +7,80 @@
 <h2>Organize, remind, and contact friends / loved ones of important events in their life, never forget or miss an important moment again.</h2>
 
 Events Feed 
-<%@events.each do |event|%>
-    <p><%= link_to event.event_name, event_path(event) %><p>
-    <p>Category: <%= event.category %></p>
-    <p>Date: <%= event.date %></p>
-    <p>Time: <%= event.time %></p>
-    <br>
-<%end%>
 
-<%= button_to "Schedule an Event", new_event_path, method: :get %>
 
-<%= button_to "Create New Contact", new_contact_path, method: :get %>
+
+
+Our old code -->
+
+
+
+    
+
+
+<div class="card p-10">
+            
+                <div class="col-md-2">
+                  <div class="form-group">
+                
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                 
+              <h3 class="text-center">Never forget or miss an important moment again.</h3>
+                <!-- 
+                  <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGtIaF-6-Bz6jaxnTMWGjqLBEJ3PGgRDrsQ&usqp=CAU" alt="" class="img-fluid card-img-top" > 
+                -->    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+ <section id="contact" class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card p-4">
+            <div class="card-body">
+                <%@events.each do |event|%>
+                  <img src="https://voidtech.net/images/calendar_color_picker/Calendar%20Color%20Picker%20Icon%20Large%20Clear.png" alt="" class="img-fluid card-img-top"> 
+                  <hr>
+                  <hr>
+                  <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
+                  <small class="text-muted">Category: <%= event.category %></small>
+                  <hr>
+                  <small class="text-muted">Date: <%= event.date %></small>
+                  <hr>
+                  <small class="text-muted">Time: <%= event.time %></small>
+                  <hr>
+                  <p class="card-text">Message: <%= event.message %></p>
+                  <hr>
+                  <hr>
+                <%end%>  
+            </div>
+          </div>
+        </div>
+       <div class="col-md-8">
+          <div class="card p-4">
+            <div class="card-body">
+              <h3 class="text-center">Schedule an Event Now</h3>
+              <hr>
+              <div class="row">
+                <h3 size: large;><%=button_to "Schedule an Event", new_event_path, method: :get %></h3>
+                <hr>
+                <h3 size: large; ><%= button_to "Create New Contact", new_contact_path, method: :get %></h3>
+            </div>
+          </div>
+        
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGtIaF-6-Bz6jaxnTMWGjqLBEJ3PGgRDrsQ&usqp=CAU" alt="" class="img-fluid card-img-top"> 
+
+
+        
+      </div>
+    </div>
+  </section>
+<!-- CONTACT SECTION -->

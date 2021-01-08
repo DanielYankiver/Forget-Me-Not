@@ -13,31 +13,27 @@
  *= require_tree .
  *= require_self
  */
-.container {
+
+ 
+/* .container {
     width:1000px;
     margin:auto;
-    /* margin-top:50px; */
-}
+    margin-top:50px; 
+} */
 
-.form-container {
+/* .form-container {
     width:500px;
-}
+} */
 
 
 .logo {
     width: 100px;
     float: left;
-
-    -webkit-animation: spin 5s infinite linear;
-    @-webkit-keyframes spin {
-        0%  {-webkit-transform: rotate(0deg)}
-        100% {-webkit-transform: rotate(350deg)}
-    }
  }
-
+/* 
  header {
      background: rgb(197, 197, 197);
- }
+ } */
 
  header::after {
     content: '';
@@ -47,6 +43,7 @@
 
  nav { 
     float: center;
+
  }
 
  nav ul {
@@ -57,18 +54,36 @@
 
 
  nav li {
-    display: inline-block;
-    margin-left: 70px;
-    padding-top: 35px;
+    /* display: inline-block; */
+    margin-left: 75px;
+    padding-top: 10px;
  }
  
  nav a {
-     color: lightblue
+     color: rgb(165, 165, 165);
      text-decoration: none;
-     text-transform: uppercase;
-     font-size: 14px;
+     text-transform: capitalize;
+     font-size: 16px;
  }
 
  nav a:hover{
     color: black
  }
+
+
+
+
+/*------------- Home Page ----------*/
+
+
+
+
+
+
+
+
+
+
+
+
+

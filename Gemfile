@@ -59,3 +59,7 @@ gem 'delayed_job_active_record'
 
 # Need daemons to start delayed_job
 gem 'daemons'
+
+#bootstrap gem file 
+gem 'bootstrap', '~> 4.5.3' 
+
