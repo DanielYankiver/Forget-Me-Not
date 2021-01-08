@@ -27,8 +27,10 @@ Our old code -->
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                 
-              <h2 class="text-center font-weight-normal">Never miss an important moment again.</h2>
+            <div class="description">
+              <h1 class="text-center font-weight-normal">FORGET ME NOT</h1>
+            </div>
+            
                 <!-- 
                   <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGtIaF-6-Bz6jaxnTMWGjqLBEJ3PGgRDrsQ&usqp=CAU" alt="" class="img-fluid card-img-top" > 
                 -->    
@@ -45,6 +47,9 @@ Our old code -->
       <div class="row">
         <div class="col-md-4">
           <div class="card p-4">
+          <div class="event-feed"> 
+          <h3 class="text-center"><%= link_to " EVENT FEED ", events_path, method: :get %></h3>
+          </div>
             <div class="card-body">
                 <%@events.each do |event|%>
                   <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
@@ -67,20 +72,34 @@ Our old code -->
        <div class="col-md-8">
           <div class="card p-4">
             <div class="card-body">
-              <h3 class="text-center">Schedule an Event Now</h3>
+              <div class="subtitle">
+              <h3 class="text-center font-weight-normal">Never miss an important moment again!</h3>
+              <br>
               <hr>
+              </div>
+             
               <div class="row">
-                <h3 size: large;><%=button_to "Schedule an Event", new_event_path, method: :get %></h3>
+                <button class="btn btn-info" type="button"><h3 size: large;><%=link_to " Schedule an Event ", new_event_path, method: :get %></h3> </button>
                 <hr>
-                <h3 size: large; ><%= button_to "Create New Contact", new_contact_path, method: :get %></h3>
-            </div>
+                <button class="btn btn-info" type="button"><h3 size: large; ><%= link_to "Create New Contact", new_contact_path, method: :get %></h3></button>
+                
+              </div>
           </div>
         
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGtIaF-6-Bz6jaxnTMWGjqLBEJ3PGgRDrsQ&usqp=CAU" alt="" class="img-fluid card-img-top"> 
 
+              <hr>
+          <div class="fmn-desc"> 
+        
+              <h5 class="text-center">With Forget Me Not you can create personalized message on your own time that will arrive on schedule. 
+              Our CRM does the remebering for you!</h5>
+  
+          </div>
+          </div>
 
         
       </div>
     </div>
   </section>
-<!-- CONTACT SECTION -->
+<!-- CONTACT SECTION -->'
+

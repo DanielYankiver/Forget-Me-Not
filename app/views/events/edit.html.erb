@@ -1,34 +1,69 @@
 <h1>Edit Event</h1>
 
-<% if flash[:errors_array] %>
+ <% if flash[:errors_array] %>
   <% flash[:errors_array].each do |error| %>
     <p style="color: red;"><%= error %></p>
   <% end %>
 <% end %>
-
 <%= form_for @event do |f| %>
     <%= f.hidden_field :user_id, :value => @current_user.id %>
     <br>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-    <br>
-    <%= f.label :time %>
-    <%= f.time_field :time %>
-    <br>
-    <%= f.label :event_name, "Name Of Event" %>
-    <%= f.text_field :event_name %>
-    <br>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
-    <br>
-    <%= f.label :contact_id, "Pick a Contact" %>
-    <%= f.collection_select :contact_id, @current_user.contacts, :id, :name %>
-    <br>
-    <%= f.label :message %>
-    <%= f.text_area :message, placeholder: "Edit Message to Send"%>
-    <br>
-    <%= f.label :note %>
-    <%= f.text_area :note %>
-    <br>
+    
+    <div class="col-md-6">
+        <div class="form-group">
+            <%= f.date_field :date, placeholder: "Select Date" %>
+       </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <%= f.time_field :time, placeholder: "Select Time" %>
+        </div>
+    </div>
+    
+     <div class="col-md-6">
+        <div class="form-group">
+            <%= f.text_field :event_name, placeholder: "Enter Name of Event" %>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="form-group">
+            <%= f.text_field :category, placeholder: "Enter Category Type" %>
+        </div>
+    </div>
+    
+    <% if @current_user.contacts.empty?%>
+      <div class="col-md-6">
+        <div class="form-group">
+            <%= f.text_area :contact_id, placeholder: "You Do Not Have Any Contacts. Please Create Contact Below First" %>
+        </div>
+      </div>
+    
+    <% else%>
+    
+      <div class="col-md-6">
+        <div class="form-group">
+            <%= f.collection_select :contact_id, @current_user.contacts, :id, :name %>
+        </div>
+      </div>
+    <% end%>
+   
+  <div class="col-md-6">
+    <div class="form-group">
+        <%= f.text_area :message, placeholder: "Write Message to Send"%>
+    </div>
+ </div>
+    
+ <div class="col-md-6">
+    <div class="form-group">
+        <%= f.text_area :note, placeholder: "Leave a Note" %>
+    </div>
+</div>
+    
+  <div class="col-md-12">
+     <div class="form-group">
     <%= f.submit %>
+    </div>
+    </div>
 <% end %>

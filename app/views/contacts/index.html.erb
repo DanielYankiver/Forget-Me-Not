@@ -12,13 +12,12 @@
                 <div class="col-md-12">
                   <div class="form-group">
                   <div class="text-left align-self-end ml-auto">
-                  <button class="btn btn-success margin-right btn-lg " type="button"><%= link_to "Create New Event", new_event_path, method: :get %></button>
+             
                 </div>
-
-              <h3 class="text-center margin-right">All Of Your Contacts</h3>
-                <div class="text-right align-self-end ml-auto">
-                <button class="btn btn-success btn-lg " type="button"><%= link_to "Create New Contact", new_contact_path, method: :get %></button>
-                </div>
+<br>
+              <h1 class="text-center margin-right">All Of Your Contacts</h1>
+<br>
+             
                 <!-- 
                   <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGtIaF-6-Bz6jaxnTMWGjqLBEJ3PGgRDrsQ&usqp=CAU" alt="" class="img-fluid card-img-top" > 
                 -->  
@@ -30,53 +29,79 @@
             </div>
           </div>
 
-<section id="contact" class="py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card p-4">
-            <div class="card-body">
-            <div class="row align-items-start">
-            <u><h3 class="text-center">Upcoming Events</h3></u>
-            <br>
-                <%@events.each do |event|%>
-                  <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
-                  <hr>
-                  <hr>
-                  <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
-                  <small class="text-muted">Category: <%= event.category %></small>
-                  <hr>
-                  <small class="text-muted">Date: <%= event.date %></small>
-                  <hr>
-                  <small class="text-muted">Time: <%= event.time %></small>
-                  <hr>
-                  <p class="card-text">Message: <%= event.message %></p>
-                  <hr>
-                  <hr>
-                <%end%>  
-                </div>
-            </div>
-          </div>
+
+<br>
+  <div class="buttons">
+    <div class="flex-parent jc-center">
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h4 size: large;><%= link_to "Create New Event", new_event_path, method: :get %></button></h4>
         </div>
-  </section>
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h4 size: large;><%= link_to "Create New Contact", new_contact_path, method: :get %></button></h4>
+        </div>
+    </div>
+</div>
+
+
 
 <section id="contact" class="py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+  <div class="container-center">
+    <div class="row justify-content-center">
+       
+        <div class="col-4">
           <div class="card p-4">
             <div class="card-body">
-            <div class="row align-items-center">
-                <%@contacts.each do |contact|%>
-                  <img src="https://source.unsplash.com/random" alt="" class="img-fluid card-img-top"> 
-                  <hr>
-                  <hr>
-                  <h4 class="card-title"><%= link_to contact.name, contact_path(contact)%></h4>
-                  <small class="text-muted">Birthday: <%= contact.birthday  %></small>
-                  <hr>
-                  <hr>
-                <%end%>  
-                </div>
-            </div>
-          </div>
+                   <%@contacts.each do |contact|%>
+                        <img src="https://source.unsplash.com/random" alt="" class="img-fluid card-img-top"> 
+                        <hr>
+                        <hr>
+                        <h4 class="card-title"><%= link_to contact.name, contact_path(contact)%></h4>
+                        <small class="text-muted">Birthday: <%= contact.birthday  %></small>
+                        <hr>
+                        <hr>
+                   <%end%>  
+            
+      
         </div>
+      </div>
+
+        
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+<section >
+    <section id="event" class="py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card p-4">
+                <div class="card-body">
+                <div class="row align-items-start">
+                <u><h3 class="text-center">Upcoming Events</h3></u>
+                <br>
+                    <%@events.each do |event|%>
+                      <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
+                      <hr>
+                      <hr>
+                      <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
+                      <small class="text-muted">Category: <%= event.category %></small>
+                      <hr>
+                      <small class="text-muted">Date: <%= event.date %></small>
+                      <hr>
+                      <small class="text-muted">Time: <%= event.time %></small>
+                      <hr>
+                      <p class="card-text">Message: <%= event.message %></p>
+                      <hr>
+                      <hr>
+                    <%end%>  
+                    </div>
+                </div>
+              </div>
+            </div>
+      </section>
+
+  -->  
+

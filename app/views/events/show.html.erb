@@ -1,26 +1,65 @@
-<h1>Event Name: <%=@event.event_name%></h1>
+<center class="text-center"><h1>Event Name: <%=@event.event_name%></h1></center> 
 
 <br>
+<center>
 <p>Time: <%=@event.time%></p>
 <p>Date: <%=@event.date%></p>
 <p>Category: <%=@event.category%></p>
 <p>Message: <%= @event.message %></p>
 <p>Note: <%=@event.note%></p>
+</center>
 
-<br>    
+<hr>  
 
-<h1>Events Feed</h1>
+<div class="buttons">
+    <div class="flex-parent jc-center">
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h3 size: large;><%= link_to "Delete Event", event_path(@event), method: :delete %></button></h3>
+        </div>
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h3 size: large;><%= link_to "Edit This Event", edit_event_path(@event), method: :get %></button></h3>
+        </div>
+        <div>
+            <button class="btn btn-info btn-lg" type="button"><h3 size: large;><%= link_to "Create New Event", new_event_path, method: :get %></button></h3>
+        </div>
+    </div>
+</div>
 
-<%@events.each do |event|%>
-    <p><%= link_to event.event_name, event_path(event) %><p>
-    <p>Category: <%= event.category %></p>
-    <p>Date: <%= event.date %></p>
-    <p>Time: <%= event.time %></p>
-    <br>
-<%end%>
+<hr>
 
-<%= button_to "Edit This Event", edit_event_path(@event), method: :get %>
 
-<%= button_to "Create New Event", new_event_path, method: :get %>
-    
-<%= button_to "Delete Event", event_path(@event), method: :delete %>
+
+<section id="contact" class="py-3">
+  <div class="container-center">
+    <div class="row justify-content-center">
+       
+        <div class="col-4">
+          <div class="card p-4">
+          <h3 class="text-center">EVENTS FEED</h3>
+            <div class="card-body">
+                <%@events.each do |event|%>
+                  <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
+                  <hr>
+                  <hr>
+                  <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
+                  <small class="text-muted">Category: <%= event.category %></small>
+                  <hr>
+                  <small class="text-muted">Date: <%= event.date %></small>
+                  <hr>
+                  <small class="text-muted">Time: <%= event.time %></small>
+                  <hr>
+                  <p class="card-text">Message: <%= event.message %></p>
+                  <hr>
+                  <hr>
+                <%end%>  
+            
+      
+        </div>
+      </div>
+
+        
+    </div>
+  </div>
+</section>
+
+

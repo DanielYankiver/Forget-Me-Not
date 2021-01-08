@@ -4,10 +4,13 @@
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#">Forget Me Not</a>
-               <% link_to home_path do %>
-                    <% image_tag "FMN.png", class: "logo" %>
+             
+            <a class="navbar-brand" href="#">
+                <%= link_to home_path do %>
+                    <h1 class="emoji" >✿</h1>
                 <% end %>
+            </a>
+            
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>

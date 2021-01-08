@@ -13,15 +13,15 @@
                             <!-- Form start -->
                             <div class="row">
                                 <div class="col-md-6">
-                              <div class="form-group">
                                 <% if flash[:errors_array] %>
                                 <% flash[:errors_array].each do |error| %>
                                   <p style="color: red;"><%= error %></p>
                                 <% end %>
                               <% end %>
+                              <div class="form-group">
                               <%= form_for @event do |f| %>
                                   <%= f.hidden_field :user_id, :value => @current_user.id %>
-    
+                                
                                         <label class="control-label" for="name">Date</label>
                                          <%= f.date_field :date, placeholder: "Select Date", :class => "form-control input-md", :id => "date" %>
                                   
@@ -36,6 +36,7 @@
                                        
                                     </div>
                                 </div>
+
                                 <!-- Text input-->
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -44,6 +45,7 @@
                                       
                                     </div>
                                 </div>
+
                                 <!-- Select Basic -->
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -57,6 +59,7 @@
                                 <% if @current_user.contacts.empty?%>
                                   <div class="col-md-6">
                                     <div class="form-group">
+                                    
                                         <%= f.text_area :contact_id, placeholder: "You Do Not Have Any Contacts. Please Create Contact Below First", :class => "form-control input-md", :id => "contact" %>
                                     </div>
                                   </div>
@@ -64,40 +67,46 @@
                                 <% else%>
                                 <div class="col-md-12">
                                     <div class="form-group">
+                                    <label class="control-label" for="time">Contact</label>
                                         <%= f.collection_select :contact_id, @current_user.contacts, :id, :name, :class => "form-control input-md", :id => "contact" %>
                                     </div>
                                 </div>
                                 <% end%>
+
+
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label" for="time">Message To Loved One</label>
                                                 <%= f.text_area :message, placeholder: "Write Message to Send", :class => "form-control input-md", :id => "contact"%>
-
                                     </div>
                                 </div>
 
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label" for="time">Leave a Note</label>
-                                        <%= f.text_area :note, placeholder: "Leave a Note", :class => "form-control input-md", :id => "category" %>
-                                      
+                                            <%= f.text_area :note, placeholder: "Leave a Note", :class => "form-control input-md", :id => "category" %>
                                     </div>
                                 </div>
+
+
                                  <div class="col-md-12">
                                     <div class="form-group">
-                                        <%= f.submit "Create Event",  :class => "btn btn-success", :id => "singlebutton"%>
-
+                                           <%= f.submit%>
                                     </div>
                                 </div>
 
 
                             </div>
                         </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-<% end %>
+                    
+<h1 size: large;><%= button_to "Create a Contact", new_contact_path, method: :get %></h1>          
+                           
 
 
-
-<br>
-<button  class="btn btn-outline-success"><%= link_to "Create a Contact", new_contact_path, method: :get %></button>
 

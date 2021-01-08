@@ -1,29 +1,77 @@
-<h1><%=@contact.name%></h1>
 
-<%= button_to "Delete Contact", contact_path(@contact), method: :delete %>
+<center class="text-center"><h1><%=@contact.name%></h1></center> 
+<br>
+<center>
+  <%if @contact.avatar.attached? %>
+      <img src=<%= (url_for(@contact.avatar))%>>
+  <%end%>
+</center>
 
-<%if @contact.avatar.attached? %>
-    <img src=<%= (url_for(@contact.avatar))%>>
-<%end%>
+<hr>    
+<br>
+
+<div class="buttons">
+    <div class="flex-parent jc-center">
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h3 size: large;><%= link_to "Delete Contact", contact_path(@contact), method: :delete %></button></h3>
+        </div>
+        <div>
+            <button class="btn btn-info margin-right btn-lg " type="button"><h3 size: large;><%= link_to "Edit Contact", edit_contact_path, method: :get %></button></h3>
+        </div>
+        <div>
+            <button class="btn btn-info btn-lg" type="button"><h3 size: large;><%= link_to "Schedule an Event", new_event_path, method: :get %></button></h3>
+        </div>
+    </div>
+</div>
+
+<br>
+ 
+<hr>    
+
+
 
 <br>
 <br>
+<center>
 <p>Contact Info: <%= @contact.contact_info%></p>
 <p>Birthday: <%= @contact.birthday%></p>
+</center>
 
-<h1>Event Feed</h1>
-<% @events.each do |event| %>
-    <p>Event Name: <%= event.event_name %> </p>
-    <p>Event Date: <%= event.date %></p> 
-    <p>Event Time: <%= event.time %></p>
-    <p>Event Category: <%= event.category %></p>
-    <br>
-<% end %>  
 
-<br>
-<%= button_to "Edit Contact", edit_contact_path, method: :get %>
-<br>
-<%= button_to "Schedule an Event", new_event_path, method: :get %>
+
+<section id="contact" class="py-3">
+  <div class="container-center">
+    <div class="row justify-content-center">
+       
+        <div class="col-4">
+          <div class="card p-4">
+          <h3 class="text-center">EVENTS FEED</h3>
+            <div class="card-body">
+                <%@events.each do |event|%>
+                  <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
+                  <hr>
+                  <hr>
+                  <h4 class="card-title"><%= link_to event.event_name, event_path(event) %></h4>
+                  <small class="text-muted">Category: <%= event.category %></small>
+                  <hr>
+                  <small class="text-muted">Event Date: <%= event.date %></small>
+                  <hr>
+                  <small class="text-muted">Event Time: <%= event.time %></small>
+                  <hr>
+                  <p class="card-text">Event Category: <%= event.category %></p>
+                  <hr>
+                  <hr>
+                <%end%>  
+            
+      
+        </div>
+      </div>
+
+        
+    </div>
+  </div>
+</section>
+
 
 
 <!--<p>Stretch: add a input note area</p>-->

@@ -78,7 +78,11 @@
 
 
 
-
+.emoji {
+   color: rgb(47, 162, 201); 
+   position: relative;
+   left: 100px; 
+}
 
 
 
