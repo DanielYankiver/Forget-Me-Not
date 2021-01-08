@@ -28,7 +28,7 @@
     <%= f.text_field :category, placeholder: "Category" %>
     <br>
     <br>
-    <% if @current_user.contacts.empty?%>
+    <% if Contact.all.empty?%>
      
       <%= f.text_area :contact_id, placeholder: "Contact" %>
     <% else%>
