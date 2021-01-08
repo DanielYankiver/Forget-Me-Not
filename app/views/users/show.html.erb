@@ -1,16 +1,21 @@
 
 
 <hr>
+<br>
     <div>
         <%if @user.avatar.attached? %>
             <img src="<%= (url_for(@user.avatar))%>" alt="" class="displayed">
         <%end%>
     </div>
+    <br>
     <div class="profile-header-info"> 
         <p>Name: <%= @user.name %></p>
         <p>Username: <%= @user.username %></p>
     </div>
+
+    <br>
 <hr>
+<br>
 
 <div class="buttons">
     <div class="flex-parent jc-center">
@@ -25,5 +30,7 @@
         </div>
     </div>
 </div>
+<br>
+<hr>    
 
 

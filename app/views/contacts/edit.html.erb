@@ -1,28 +1,34 @@
-<h1>Edit Contact</h1>
+<div class="form"> 
 
-<% if flash[:errors_array] %>
-  <% flash[:errors_array].each do |error| %>
-    <p style="color: red;"><%= error %></p>
+<hr>
+  <h1>Edit Contact</h1>
+
+  <% if flash[:errors_array] %>
+    <% flash[:errors_array].each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= form_for @contact do |f| %>
-    <%= f.hidden_field :user_id, :value => @current_user.id %>
-    <br>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :birthday %>
-    <%= f.date_field :birthday %>
-    <br>
-   
-    <%= f.label :contact_info %>
-    <%= f.text_field :contact_info %>
-    <br>
-    <%= f.label "Image Upload" %>
-    <%= f.file_field :avatar %>
-    <br>
-    <%= f.submit %>
-<% end %>
+  <%= form_for @contact do |f| %>
+      <%= f.hidden_field :user_id, :value => @current_user.id %>
+      <br>
+      <%= f.text_field :name, placeholder: "Name" %>
+      <br>
+      <br>
+      <%= f.date_field :birthday, placeholder: "Birthday" %>
+      <br>
+      <br>
+      <%= f.text_field :contact_info, placeholder: "Contact Info" %>
+      <br>
+      <br>
+      <%= f.file_field :avatar %>
+      <br>
+      <br>
+      <%= f.submit %>
+  <% end %>
+
+  <hr>
+
+</div>
 
 

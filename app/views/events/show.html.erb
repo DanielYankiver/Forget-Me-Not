@@ -1,4 +1,4 @@
-<center class="text-center"><h1>Event Name: <%=@event.event_name%></h1></center> 
+<center class="text-center"><h1><%=@event.event_name%></h1></center> 
 
 <br>
 <center>
@@ -35,9 +35,9 @@
        
         <div class="col-4">
           <div class="card p-4">
-          <h3 class="text-center">EVENTS FEED</h3>
+          <h3 class="text-center"><%= link_to " EVENT FEED ", events_path, method: :get %></h3>
             <div class="card-body">
-                <%@events.each do |event|%>
+                <%@events.reverse_each do |event|%>
                   <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
                   <hr>
                   <hr>

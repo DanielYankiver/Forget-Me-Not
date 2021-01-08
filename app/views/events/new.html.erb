@@ -1,103 +1,55 @@
 
-
-
-
- <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="well-block">
-                        <div class="well-title">
-                            <h2>Create a New Event</h2>
-                        </div>
-                        <form>
-                            <!-- Form start -->
-                            <div class="row">
-                                <div class="col-md-6">
-                              <div class="form-group">
-                                <% if flash[:errors_array] %>
-                                <% flash[:errors_array].each do |error| %>
-                                  <p style="color: red;"><%= error %></p>
-                                <% end %>
-                              <% end %>
-                              <%= form_for @event do |f| %>
-                                  <%= f.hidden_field :user_id, :value => @current_user.id %>
-    
-                                        <label class="control-label" for="name">Date</label>
-                                         <%= f.date_field :date, placeholder: "Select Date", :class => "form-control input-md", :id => "date" %>
-                                  
-                                    </div>
-                                </div>
-                                <!-- Text input-->
-                             
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="email">Time</label>
-                                         <%= f.time_field :time, placeholder: "Select Time", :class => "form-control input-md", :id => "time" %>
-                                       
-                                    </div>
-                                </div>
-                                <!-- Text input-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="date">Name of Event</label>
-                                           <%= f.text_field :event_name, placeholder: "Enter Name of Event", :class => "form-control input-md", :id => "name" %>
-                                      
-                                    </div>
-                                </div>
-                                <!-- Select Basic -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="time">Category</label>
-                                        <%= f.text_field :category, placeholder: "Enter Category Type", :class => "form-control input-md", :id => "category" %>
-                                    </div>
-                                </div>
-                                <!-- Select Basic -->
-                                
-                                <!-- Button -->
-                                <% if @current_user.contacts.empty?%>
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                        <%= f.text_area :contact_id, placeholder: "You Do Not Have Any Contacts. Please Create Contact Below First", :class => "form-control input-md", :id => "contact" %>
-                                    </div>
-                                  </div>
-                                 
-                                <% else%>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <%= f.collection_select :contact_id, @current_user.contacts, :id, :name, :class => "form-control input-md", :id => "contact" %>
-                                    </div>
-                                </div>
-                                <% end%>
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="time">Message To Loved One</label>
-                                                <%= f.text_area :message, placeholder: "Write Message to Send", :class => "form-control input-md", :id => "contact"%>
-
-                                    </div>
-                                </div>
-
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="time">Leave a Note</label>
-                                        <%= f.text_area :note, placeholder: "Leave a Note", :class => "form-control input-md", :id => "category" %>
-                                      
-                                    </div>
-                                </div>
-                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <%= f.submit "Create Event",  :class => "btn btn-success", :id => "singlebutton"%>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </form>
-
+<div class="form"> 
+<h1>New Event</h1>
+<hr>
+<% if flash[:errors_array] %>
+  <% flash[:errors_array].each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <% end %>
 <% end %>
 
+<%= form_for @event do |f| %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
+    <br>
+    <br>
+    
+    <%= f.date_field :date, placeholder: "Date" %>
+    <br>
+    <br>
+    
+    <%= f.time_field :time, placeholder: "Time" %>
+    <br>
+    <br>
+    
+    <%= f.text_field :event_name, placeholder: "Event Name" %>
+    <br>
+    <br>
 
+    <%= f.text_field :category, placeholder: "Category" %>
+    <br>
+    <br>
+    <% if @current_user.contacts.empty?%>
+     
+      <%= f.text_area :contact_id, placeholder: "Contact" %>
+    <% else%>
+  
+     <%= f.collection_select :contact_id, Contact.all, :id, :name %>
+    <% end%>
+    <br>
+    <br>
+    
+    <%= f.text_area :message, placeholder: "Write Message to Send"%>
+    <br>
+    <br>
+    
+    <%= f.text_area :note, placeholder: "Write a Note" %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>
 
-<br>
+<hr>
+<p> If you have no contacts, create one below before creating an event:</p>
 <button  class="btn btn-outline-success"><%= link_to "Create a Contact", new_contact_path, method: :get %></button>
-
+<hr>
+</div>

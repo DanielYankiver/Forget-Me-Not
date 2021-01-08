@@ -1,24 +1,31 @@
-<h1>Sign Up</h1>
+<div class=form> 
+  <hr>
+  <h1>Sign Up</h1>
+  <hr>
 
-<% if flash[:errors_array] %>
-  <% flash[:errors_array].each do |error| %>
-    <p style="color: red;"><%= error %></p>
+  <% if flash[:errors_array] %>
+    <% flash[:errors_array].each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= form_for @user do |f|%>
-  <%= f.label :username%><br>
-  <%= f.text_field :username, placeholder: "Enter Username"%><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password, placeholder: "Enter Password"%><br>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  <%= form_for @user do |f|%>
+    <%= f.text_field :username, placeholder: "Enter Username"%><br>
+    <br>
+    <%= f.password_field :password, placeholder: "Enter Password"%><br>
+    <br>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    <br>
+    <br>
+    <%= f.file_field :avatar %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <%end%>
   <br>
-  <%= f.label "Image Upload" %>
-  <%= f.file_field :avatar %>
   <br>
-  <br>
-  <%= f.submit %>
-<%end%>
-<br>
-<%= button_to "Login", '/login', method: :get%>
+  <h6>Already a user?</h6>
+  <%= button_to "Login", '/login', method: :get%>
+
+  <hr>
+</div>

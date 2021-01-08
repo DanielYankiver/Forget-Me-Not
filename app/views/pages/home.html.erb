@@ -51,7 +51,7 @@ Our old code -->
           <h3 class="text-center"><%= link_to " EVENT FEED ", events_path, method: :get %></h3>
           </div>
             <div class="card-body">
-                <%@events.each do |event|%>
+                <%@events.reverse_each do |event|%>
                   <img src="https://www.pngkey.com/png/detail/24-243693_calendar-clock-icon-date-and-time-png.png" alt="" class="img-fluid card-img-top"> 
                   <hr>
                   <hr>

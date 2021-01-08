@@ -1,18 +1,31 @@
-<h1>Login</h1>
-   <%= form_tag '/login' do %>
-   <%= label_tag :username%>
-   <%= text_field_tag :username %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
-<%end%>
+<div class="form">
+  <hr>
+  <h1>Login</h1>
+  <hr>
+    <%= form_tag '/login' do %>
+    <%= label_tag :username%>
+    <%= text_field_tag :username %>
+    <br>
+   <br>
+    <%= label_tag :password%>
+    <%= password_field_tag :password%>
+    <br>
+    <br>
+    <%= submit_tag "Login"%>
+  <%end%>
 
-<br>
-      <%= button_to "Sign Up", '/users/new', method: :get%>
+  <br>
+        <%= button_to "Sign Up", '/users/new', method: :get%>
 
-  <% if flash[:error] %>
-    <p style="color: red;"><%= flash[:error] %></p>
-  <% end %>
+    <% if flash[:error] %>
+      <p style="color: red;"><%= flash[:error] %></p>
+    <% end %>
+  <hr>
+</div>
   
+
+
+
+
 
   
