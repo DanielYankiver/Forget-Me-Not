@@ -13,21 +13,21 @@ require 'faker'
     Event.create( date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
                   time: Faker::Time.between(from: Time.now - 12, to: Time.now, format: :default),
                   event_name: Faker::SlackEmoji.celebration,
-                  note: Faker::Quotes::Shakespeare.hamlet_quote,
-                  category: ["Birthday", "Anniversary", "Funeral", "Party", "Bar-Mitzvah", "Bat-Mitzavah", "Coffee Date", "Call", "Facetime Date"].sample,
-                  user_id: rand(1..3),
-                  contact_id: rand(1..10)
+                  note: "Don't forget guest list!",
+                  category: ["Birthday", "Anniversary", "Halloween Party", "Bar-Mitzvah"].sample,
+                  user_id: 1,
+                  contact_id: rand(1..4)
                   )
 end 
 
-10.times do 
-    Gift.create(name: Faker::Name.name, description: Faker::Marketing.buzzwords, link: Faker::Internet.domain_name, image: Faker::SlackEmoji.objects_and_symbols, event_id: Event.ids.sample) 
-end 
+# 10.times do 
+#     Gift.create(name: Faker::Name.name, description: Faker::Marketing.buzzwords, link: Faker::Internet.domain_name, image: Faker::SlackEmoji.objects_and_symbols, event_id: Event.ids.sample) 
+# end 
 
 
-10.times do 
-    Message.create(event_id: rand(1..10), title: Faker::Quote.yoda, body: Faker::Quote.famous_last_words, image: Faker::SlackEmoji.objects_and_symbols)
-end 
+# 10.times do 
+#     Message.create(event_id: rand(1..10), title: Faker::Quote.yoda, body: Faker::Quote.famous_last_words, image: Faker::SlackEmoji.objects_and_symbols)
+# end 
 
 User.create(name: "Mark", username: "markymark",password: "abc123",password_confirmation: "abc123")
 User.create(name: "Daniel", username: "dyank", password: "abc123",password_confirmation: "abc123")
@@ -35,9 +35,12 @@ User.create(name: "Eric", username: "ericthelord", password: "abc123",password_c
 
 
 
-10.times do 
-    Contact.create(name: Faker::Name.name, birthday: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'), contact_info: Faker::PhoneNumber.cell_phone, image: Faker::SlackEmoji.objects_and_symbols, user_id: User.ids.sample)
-end 
+
+    Contact.create(name: "Niko", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/nBbX7qD/Project-Niko.jpg", user_id: 1)
+    Contact.create(name: "Jen", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/nzrSjmf/Project-Jenny.jpg", user_id: 1)
+    Contact.create(name: "Haley", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/tYqy0yM/Project-Haley.jpg", user_id: 1)
+    Contact.create(name: "Dan", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/bXpY5K7/Project-Dan-With-Hair.jpg", user_id: 1)
+
 
 puts "Seed! Seed! Seed! Seed! Seed!"
 
