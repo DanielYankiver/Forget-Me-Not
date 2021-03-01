@@ -9,16 +9,7 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10.times do 
-    Event.create( date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
-                  time: Faker::Time.between(from: Time.now - 12, to: Time.now, format: :default),
-                  event_name: Faker::SlackEmoji.celebration,
-                  note: "Don't forget guest list!",
-                  category: ["Birthday", "Anniversary", "Halloween Party", "Bar-Mitzvah"].sample,
-                  user_id: 1,
-                  contact_id: rand(1..4)
-                  )
-end 
+
 
 # 10.times do 
 #     Gift.create(name: Faker::Name.name, description: Faker::Marketing.buzzwords, link: Faker::Internet.domain_name, image: Faker::SlackEmoji.objects_and_symbols, event_id: Event.ids.sample) 
@@ -40,6 +31,49 @@ User.create(name: "Eric", username: "ericthelord", password: "abc123",password_c
     Contact.create(name: "Jen", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/nzrSjmf/Project-Jenny.jpg", user_id: 1)
     Contact.create(name: "Haley", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/tYqy0yM/Project-Haley.jpg", user_id: 1)
     Contact.create(name: "Dan", birthday: '2014-09-23', contact_info: "000-000-0000", image: "https://i.ibb.co/bXpY5K7/Project-Dan-With-Hair.jpg", user_id: 1)
+
+
+   
+        Event.create( date: DateTime.new,
+                      time: DateTime.new,
+                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+                      note: "Don't forget guest list!",
+                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      user_id: 1,
+                      contact_id: rand(1..4)
+                      )
+        Event.create( date: DateTime.new,
+                      time: DateTime.new,
+                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+                      note: "Don't forget guest list!",
+                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      user_id: 1,
+                      contact_id: rand(1..4)
+                      )
+        Event.create( date: DateTime.new,
+                      time: DateTime.new,
+                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+                      note: "Don't forget guest list!",
+                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      user_id: 1,
+                      contact_id: rand(1..4)
+                      )
+        Event.create( date: DateTime.new,
+                      time: DateTime.new,
+                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+                      note: "Don't forget guest list!",
+                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      user_id: 1,
+                      contact_id: rand(1..4)
+                      )
+        Event.create( date: DateTime.new,
+                      time: DateTime.new,
+                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+                      note: "Don't forget guest list!",
+                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      user_id: 1,
+                      contact_id: rand(1..4)
+                      )
 
 
 puts "Seed! Seed! Seed! Seed! Seed!"
