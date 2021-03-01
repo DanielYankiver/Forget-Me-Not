@@ -34,47 +34,46 @@ User.create(name: "Eric", username: "ericthelord", password: "abc123",password_c
 
 
    
-        Event.create( date: DateTime.new,
-                      time: DateTime.new,
-                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
+        Event.create( date: DateTime.now,
+                      time: Time.now,
+                      event_name: "Birthday",
                       note: "Don't forget guest list!",
-                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
+                      category: "🎁",
                       user_id: 1,
-                      contact_id: rand(1..4)
-                      )
-        Event.create( date: DateTime.new,
-                      time: DateTime.new,
-                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
-                      note: "Don't forget guest list!",
-                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
-                      user_id: 1,
-                      contact_id: rand(1..4)
-                      )
-        Event.create( date: DateTime.new,
-                      time: DateTime.new,
-                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
-                      note: "Don't forget guest list!",
-                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
-                      user_id: 1,
-                      contact_id: rand(1..4)
-                      )
-        Event.create( date: DateTime.new,
-                      time: DateTime.new,
-                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
-                      note: "Don't forget guest list!",
-                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
-                      user_id: 1,
-                      contact_id: rand(1..4)
-                      )
-        Event.create( date: DateTime.new,
-                      time: DateTime.new,
-                      event_name: ["Birthday", "Anniversary", "Bar-Mitzvah", "Halloween Party"].sample,
-                      note: "Don't forget guest list!",
-                      category: ["🎁", "🍾", "🎃", "🕍"].sample,
-                      user_id: 1,
-                      contact_id: rand(1..4)
-                      )
+                      contact_id: 1,
+                      message: "What time should I be there?"
 
+                      )
+        Event.create( date: DateTime.now,
+                      time: Time.now,
+                      event_name: "Halloween Party",
+                      note: "Don't forget guest list!",
+                      category: "🎃",
+                      user_id: 1,
+                      contact_id: 2,
+                      message: "What time should I be there?"
+
+                      )
+        Event.create( date: DateTime.now,
+                      time: Time.now,
+                      event_name: "Bat-Mitzvah",
+                      note: "Don't forget guest list!",
+                      category: "🕍",
+                      user_id: 1,
+                      contact_id: 3,
+                      message: "What time should I be there?"
+
+                      )
+        Event.create( date: DateTime.now,
+                      time: Time.now,
+                      event_name: "Anniversary",
+                      note: "Don't forget guest list!",
+                      category: "🍾",
+                      user_id: 1,
+                      contact_id: 4,
+                      message: "What time should I be there?"
+
+                      )
 
 puts "Seed! Seed! Seed! Seed! Seed!"
 
