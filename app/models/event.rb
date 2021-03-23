@@ -14,10 +14,10 @@ class Event < ApplicationRecord
     puts "hello"
     # @twilio_number = ENV['TWILIO_NUMBER']
     # account_sid = ENV['TWILIO_ACCOUNT_SID']
-    @twilio_number = '+12672144969' 
-    account_sid = 'ACb964b111bb91a4ac4ba8457804d27729'
+    @twilio_number = '+18623439799' 
+    account_sid = 'AC28d3b838c8b4c6d41fd798229b1a206b'
     # @client = Twilio::REST::Client.new account_sid, ENV['TWILIO_AUTH_TOKEN']
-    @client = Twilio::REST::Client.new account_sid, '85e3b75cb0df6ed836ee43ef69aee2db'
+    @client = Twilio::REST::Client.new account_sid, 'dc991602b0deaf33924573a16cad5b2d'
     time_str = ((self.time).localtime).strftime("%I:%M%p on %b. %d, %Y")
     body = "Hi #{self.contact.name}, #{self.message}" 
    
