@@ -17,7 +17,7 @@ class Event < ApplicationRecord
     @twilio_number = '+18623439799' 
     account_sid = 'AC28d3b838c8b4c6d41fd798229b1a206b'
     # @client = Twilio::REST::Client.new account_sid, ENV['TWILIO_AUTH_TOKEN']
-    @client = Twilio::REST::Client.new account_sid, 'dc991602b0deaf33924573a16cad5b2d'
+    @client = Twilio::REST::Client.new account_sid, 'bc040cd35d825402af10575f449a9065'
     time_str = ((self.time).localtime).strftime("%I:%M%p on %b. %d, %Y")
     body = "Hi #{self.contact.name}, #{self.message}" 
    
