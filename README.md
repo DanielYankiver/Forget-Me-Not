@@ -24,19 +24,19 @@ Users are both able to create a contact and an event. When the user creates a co
 
 Users are able to save a bookmark.  Once you navigate to a website that you are interested in saving for later; copy the url address, paste it in the search bar, and then wait a couple seconds.  That's it! It's bookmarked.
 
-<img src="How to Save a Bookmark.gif" alt="login" width="800"/>
+<img src="Create a Contact Friend Send.gif" alt="create a contact" width="800"/>
 
 ### Search Through Contact List
 
 Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
 
-<img src="How to Search For a Bookmark.gif" alt="create request 3" width="800"/>
+<img src="Search Through Contacts.gif" alt="search contacts" width="800"/>
 
 ### Create an Event
 
 Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
 
-<img src="How to Search For a Bookmark.gif" alt="create request 3" width="800"/>
+<img src="Create an Event.gif" alt="create an event" width="800"/>
 
 ## License
 
