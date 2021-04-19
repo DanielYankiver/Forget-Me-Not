@@ -1,30 +1,38 @@
 <img src="Friend Send GitHub ReadMe Cover.png" alt="Honeycomb" width="1200"/>
 
-`Honeycomb🐝` provides a way to search for all your bookmarks instead of sifting through folder after folder. The app's mission is to change the way we locate a saved bookmark.
-
-Requires [Honeycomb🐝 front end](https://github.com/markghaida/voronoi-frontend-) and [Honeycomb🐝 back end](https://github.com/markghaida/voronoi-back).
+`Friend Send` provides a way to never forget an important moment in your friends lives again! No more missing friends birthdays, anniversaries, or special events.  Friend Send allows users to schedule an important text ahead of time so that you do not forget to send them a message when it matters most.
 
 ## Live Link & Demo
 
-Visit the [Live Link](https://honeycomb-app.netlify.app/) 
+Visit the [Live Link](http://friendsend.herokuapp.com/welcome) 
+
+To login, use the username "markymark" and password "abc123".
+
+<img src="Login Friend Send.gif" alt="login" width="800"/>
 
 Watch the [Demo](https://www.loom.com/share/c99014653d9b42ef8ad25c5ed7229a85)
 
 ## Technologies Used
 
-`Honeycomb🐝` is built with a `React` front end, a `Ruby on Rails` and `PostgreSQL` back end, `Paper.js` for the honeycomb-like design, and `Kumarai Gem` to srape all websites for necessary metadata. All styling was done with custom CSS. The live link for `Honeycomb🐝` is deployed on [Netlify](https://honeycomb-app.netlify.app/) with [Heroku](https://honeycomb-app.herokuapp.com/bookmarks) for the back end.
+`Friend Send` is a `Ruby on Rails` and `SQLite` back end. It utilizes Twilio's texting API to schedule text messages on certain dates.  All styling was done with custom CSS and Bootstrap. The live link for `Friend Send` is deployed on [Heroku](http://friendsend.herokuapp.com/welcome).
 
 ## Features
 
-The name ***Honeycomb*** comes from the design of how the bookmarks are displayed.  The design is actually a voronoi diagram which creates a honeycomb effect.  Users are both able to create bookmarks and search for a saved bookmark. Once a user comes across a website they would like to save, they simply have to copy the url and paste it into the search bar.  It is now saved.  Simply search for the site by typing the title of the bookmarked site.
+Users are both able to create a contact and an event. When the user creates a contact, that contact requires a phone number and birthdate on the form.  Additionally, when creating an event, Friend Send requires a date, time, message, and a contact.  This provides our app with all the information to schedule a message to the right person on a specific date/time. And that's it!  No more dealing with amnesia when it comes to remembering to reach out on important days, it's all taken care of!
 
-### Create a Bookmark
+### Create a Contact
 
 Users are able to save a bookmark.  Once you navigate to a website that you are interested in saving for later; copy the url address, paste it in the search bar, and then wait a couple seconds.  That's it! It's bookmarked.
 
 <img src="How to Save a Bookmark.gif" alt="login" width="800"/>
 
-### Search For a Bookmark
+### Search Through Contact List
+
+Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
+
+<img src="How to Search For a Bookmark.gif" alt="create request 3" width="800"/>
+
+### Create an Event
 
 Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
 
