@@ -22,19 +22,19 @@ Users are both able to create a contact and an event. When the user creates a co
 
 ### Create a Contact
 
-Users are able to save a bookmark.  Once you navigate to a website that you are interested in saving for later; copy the url address, paste it in the search bar, and then wait a couple seconds.  That's it! It's bookmarked.
+Users are able to create a contact.  Make sure to add a photo, phone number, and birthday.
 
 <img src="Create a Contact Friend Send.gif" alt="create a contact" width="800"/>
 
 ### Search Through Contact List
 
-Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
+Once a contact is saved, simply begin searching through your "Contacts" tab to locate the right contact.
 
 <img src="Search Through Contacts.gif" alt="search contacts" width="800"/>
 
 ### Create an Event
 
-Once a bookmark is saved, simply begin searching for the website's name.  Honeycomb scrapes the bookmark's h1 title, body text, and main image.
+Once the contact is found, simply click on their name, and then click on "Create an event" to schedule a message.
 
 <img src="Create an Event.gif" alt="create an event" width="800"/>
 
