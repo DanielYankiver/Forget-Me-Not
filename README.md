@@ -11,6 +11,7 @@ To login, use the username "markymark" and password "abc123".
 <img src="Login Friend Send.gif" alt="login" width="800"/>
 
 Watch the [Demo](https://www.loom.com/share/c99014653d9b42ef8ad25c5ed7229a85)
+<video src="https://www.loom.com/share/c99014653d9b42ef8ad25c5ed7229a85" alt="Honeycomb" width="1200"/>
 
 ## Technologies Used
 
